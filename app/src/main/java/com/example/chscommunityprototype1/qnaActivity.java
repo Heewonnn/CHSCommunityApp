@@ -84,6 +84,7 @@ public class qnaActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("qna Data");
         dialog.show();
 
+
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

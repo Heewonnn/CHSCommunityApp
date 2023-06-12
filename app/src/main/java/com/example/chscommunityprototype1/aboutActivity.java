@@ -19,6 +19,7 @@ import com.squareup.picasso.Picasso;
 
 public class aboutActivity extends AppCompatActivity {
 
+    //calling variables
     DrawerLayout drawerLayout;
     ImageView menu;
     LinearLayout home, setting, about, logOut;
@@ -31,6 +32,7 @@ public class aboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        //initializing variables
         drawerLayout = findViewById(R.id.drawerLayout);
         menu = findViewById(R.id.menu);
         home = findViewById(R.id.home);
@@ -41,45 +43,47 @@ public class aboutActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         currentUser = firebaseAuth.getCurrentUser();
 
+        //action - when click menu button
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openDrawer(drawerLayout);
-            }
+            } // open drawer
         });
-
+        //action - when click home button
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(aboutActivity.this, MainActivity.class);
+                redirectActivity(aboutActivity.this, MainActivity.class); // move to main page
             }
         });
-
+        //action - when click setting button
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 redirectActivity(aboutActivity.this, SettingActivity.class);
             }
         });
-
+//action - when click about button
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 recreate();
             }
         });
-
+//action - when click log out button
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 redirectActivity(aboutActivity.this, SignUpActivity.class);
             }
         });
-
+//update user info
         updateNavHeader();
 
     }
 
+    //method for drawer and other activities such as moving pages
     public static void openDrawer(DrawerLayout drawerLayout){
         drawerLayout.openDrawer(GravityCompat.START);
     }

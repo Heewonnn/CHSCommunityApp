@@ -17,6 +17,7 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
+    //adapter for view -- of announcement
     private Context context;
     private List<DataClass> dataList;
 

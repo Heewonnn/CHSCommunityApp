@@ -2,6 +2,8 @@ package com.example.chscommunityprototype1;
 
 import com.google.firebase.database.ServerValue;
 
+//class for comment
+
 public class Comment {
     private String content, uid, uimg, uname;
     private Object timestamp;

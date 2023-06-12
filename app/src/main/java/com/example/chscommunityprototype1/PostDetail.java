@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostDetail extends AppCompatActivity {
-
+//code for post page
     TextView detailTopic, detailQuestion;
     EditText textComment;
     ImageView detailImage, detailCommentImage;
@@ -115,6 +115,7 @@ public class PostDetail extends AppCompatActivity {
             Picasso.with(PostDetail.this).load(currentUser.getPhotoUrl()).into(detailCommentImage);
         }
 
+        //only user who created qna post can delete or edit the button
         if(!currentUser.getEmail().equals(bundle.getString("Useremail"))){
             deleteButton.setVisibility(View.GONE);
             editButton.setVisibility(View.GONE);

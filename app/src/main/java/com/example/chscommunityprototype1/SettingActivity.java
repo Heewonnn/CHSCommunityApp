@@ -81,6 +81,8 @@ public class SettingActivity extends AppCompatActivity {
         editName.setText(currentUser.getDisplayName());
         editEmail.setText(currentUser.getEmail());
 
+        //get image uri and set image
+
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -107,6 +109,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+        //update profile
         updateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

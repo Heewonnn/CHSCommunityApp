@@ -1,5 +1,5 @@
 package com.example.chscommunityprototype1;
-
+//class for qna post
 public class PostDataClass {
     private String dataTopic;
     private String dataQuestion;

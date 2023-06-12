@@ -34,6 +34,8 @@ import com.google.firebase.storage.UploadTask;
 
 public class postUpload extends AppCompatActivity {
 
+    //uploading post page
+
     String[] topicList = {"Homework", "College", "Schedule", "Club", "Other"};
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
@@ -94,6 +96,7 @@ public class postUpload extends AppCompatActivity {
         uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //upload image
                 Intent photoPicker = new Intent(Intent.ACTION_PICK);
                 photoPicker.setType("image/*");
                 activityResultLauncher.launch(photoPicker);
@@ -109,6 +112,7 @@ public class postUpload extends AppCompatActivity {
 
 
     }
+    //other methods
 
     public void saveData(){
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("qna Images")

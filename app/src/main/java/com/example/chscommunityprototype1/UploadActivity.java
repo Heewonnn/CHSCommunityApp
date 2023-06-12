@@ -30,6 +30,8 @@ import com.squareup.picasso.Picasso;
 
 public class UploadActivity extends AppCompatActivity {
 
+    ///upload announcement
+
 //    DrawerLayout drawerLayout;
 //    ImageView menu;
 //    LinearLayout home, setting, about, logOut;

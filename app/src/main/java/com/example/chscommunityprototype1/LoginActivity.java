@@ -25,6 +25,7 @@ import com.google.firebase.ktx.Firebase;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //calling variable
     private FirebaseAuth auth;
     private EditText loginEmail, loginPassword;
     private TextView signupRedirectText;
@@ -36,14 +37,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+//initializing variable
         auth = FirebaseAuth.getInstance();
         loginEmail = findViewById(R.id.login_email);
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
         forgotPassword = findViewById(R.id.forgot_password);
-
+//action - when click something
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
@@ -52,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     if(!pass.isEmpty()) {
+                        // check login info
                         auth.signInWithEmailAndPassword(email, pass).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
@@ -83,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //when user forget password
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -108,6 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 //Toast.makeText(SignUpActivity.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
 
+                                //set user info
                                 updateUserInfo(namee, pickedImgUrl, auth.getCurrentUser());
 
                                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));

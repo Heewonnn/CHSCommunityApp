@@ -1,7 +1,7 @@
 package com.example.chscommunityprototype1;
 
 public class DataClass {
-
+//data class for announcement
     private String dataDate;
     private String dataDesc;
 

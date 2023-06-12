@@ -38,6 +38,7 @@ import java.net.URI;
 
 public class PostUpdateActivity extends AppCompatActivity {
 
+    //page for updating qna post
     ImageView updateImage;
     Button updateButton;
     EditText updateQuestion;
@@ -61,6 +62,7 @@ public class PostUpdateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_update);
+        //calling
 
         updateButton = findViewById(R.id.postUpdateButton);
         //updateTopic = findViewById(R.id.postUpdateTopic);

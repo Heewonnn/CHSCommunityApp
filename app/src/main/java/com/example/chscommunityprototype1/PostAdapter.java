@@ -20,7 +20,7 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostViewHolder>{
     private Context context;
     private List<PostDataClass> dataList;
-
+//adapter class for qna post
     public PostAdapter(Context context, List<PostDataClass> dataList) {
         this.context = context;
         this.dataList = dataList;

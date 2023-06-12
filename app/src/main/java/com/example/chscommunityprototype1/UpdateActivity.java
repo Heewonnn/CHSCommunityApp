@@ -20,7 +20,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class UpdateActivity extends AppCompatActivity {
-
+//update announcement
     EditText updateDesc, updateTitle;
     String title, desc;
     String key;

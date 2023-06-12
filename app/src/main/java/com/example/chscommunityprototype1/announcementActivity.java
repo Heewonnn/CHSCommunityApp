@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class announcementActivity extends AppCompatActivity {
-
+//calling variable
     DrawerLayout drawerLayout;
     ImageView menu;
     LinearLayout home, setting, about, logOut;
@@ -55,7 +55,7 @@ public class announcementActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcement);
-
+//initializing variables
         drawerLayout = findViewById(R.id.drawerLayout);
         menu = findViewById(R.id.menu);
         home = findViewById(R.id.home);
@@ -72,6 +72,7 @@ public class announcementActivity extends AppCompatActivity {
 //        searchView = findViewById(R.id.search);
 //        searchView.clearFocus();
 
+        //create layout for recycler view
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(announcementActivity.this);
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
@@ -81,6 +82,7 @@ public class announcementActivity extends AppCompatActivity {
         //
 
         //gridLayoutManager.setReverseLayout(true);
+
 
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -135,6 +137,7 @@ public class announcementActivity extends AppCompatActivity {
 //            }
 //        });
 
+        ////action - when click something
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -170,6 +173,7 @@ public class announcementActivity extends AppCompatActivity {
             }
         });
 
+        //set only i can add announcement
         if(!currentUser.getEmail().equals("hejung@cresskillnj.net")){
             fab.setVisibility(View.GONE);
         }
@@ -195,6 +199,7 @@ public class announcementActivity extends AppCompatActivity {
 //        adapter.searchDataList(searchList);
 //    }
 
+    //other method for drawer -- repeating info
     public static void openDrawer(DrawerLayout drawerLayout){
         drawerLayout.openDrawer(GravityCompat.START);
     }

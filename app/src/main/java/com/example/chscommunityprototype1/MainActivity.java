@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    // stop user from going back and going to wrong page -- like log in or signup page
     public void onBackPressed(){
         startActivity(new Intent(MainActivity.this, MainActivity.class));
     }
@@ -164,17 +165,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String getPathFromURI(Uri contentUri){ // not used for now
-        String res = null;
-
-        String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
-        if(cursor.moveToFirst()){
-            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            res = cursor.getString(column_index);
-        }
-        cursor.close();
-        return res;
-    }
+//    public String getPathFromURI(Uri contentUri){ // not used for now
+//        String res = null;
+//
+//        String[] proj = {MediaStore.Images.Media.DATA};
+//        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
+//        if(cursor.moveToFirst()){
+//            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+//            res = cursor.getString(column_index);
+//        }
+//        cursor.close();
+//        return res;
+//    }
 
 }

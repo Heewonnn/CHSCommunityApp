@@ -31,6 +31,7 @@ public class DetailActivity extends AppCompatActivity {
 //    FirebaseAuth firebaseAuth;
 //    FirebaseUser currentUser;
 
+    //call variable
     TextView detailDesc, detailDate;
 
     FloatingActionButton deleteButton, editButton;
@@ -43,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
+    //initialize variable
         firebaseAuth = FirebaseAuth.getInstance();
         currentUser = firebaseAuth.getCurrentUser();
 
@@ -70,11 +71,13 @@ public class DetailActivity extends AppCompatActivity {
             key = bundle.getString("Key");
         }
 
+        //remove edit or delete button if the user is not me -- for announcement page
         if(!currentUser.getEmail().equals("hejung@cresskillnj.net")){
             deleteButton.setVisibility(View.GONE);
             editButton.setVisibility(View.GONE);
         }
 
+        //delete/edit announcement
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
